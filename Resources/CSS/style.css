@@ -23,7 +23,8 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%)
+		transform: translate(-50%, -50%);
+		cursor: "none";
 
 
 
@@ -73,6 +74,16 @@
 	}
 
 
+	#tire {
+		position: absolute;
+		width: 60px;
+		height: 60px;
+		border-radius: 500px;
+		-webkit-border-radius: 500px;
+		border: 15px solid black;
+		transform: translate3d(50px, 50px, 0px);
+	
+	}
 
 
 
@@ -104,7 +115,7 @@
 		font-family: arial;
 		font-size: 13pt;
 		font-weight: bold;
-		transform: translate3d(50px, 50px, 0);
+		transform: translate3d(400px, 500px, 0px);
 		
 		width: 20px;
 		height: 20px;
