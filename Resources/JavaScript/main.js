@@ -14,8 +14,9 @@ function tire_hover(e) {
 
     //Updating coordinate text
     console.log(document.getElementById("Pallet").offsetLeft);
-    var x_ = (e.pageX - loc_left)+172+radius;
-    var y_ = (e.pageY - loc_top)+172+radius;
+    var x_ = (e.pageX - 481);
+    var y_ = (e.pageY - 173);
+    console.log(x_, y_);
     coordin_text.innerHTML = "coordinates: " + (x_) + "," + (y_); 
     
     //updating tire location on the screen (hovering)

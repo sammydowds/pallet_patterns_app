@@ -19,7 +19,7 @@
 	}
 
 	#Pallet {
-		/*cursor: none;*/
+		cursor: none;
 		height: 338px;
 		width: 338px;
 		background: #998820;
@@ -38,8 +38,8 @@
 	#mouse_gone {
 		position: fixed;
 		cursor: none;
-		height: 387px;
-		width: 387px;
+		height: 800px;
+		width: 800px;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
@@ -90,7 +90,7 @@
 
 	#tire {
 		
-		cursor: move;
+		cursor: none;
 		position: absolute;
 		width: 60px;
 		height: 60px;
@@ -161,7 +161,7 @@
 	
 	#input_form {
 		position: absolute;
-		width: 30%;
+		width: 20%;
 		font-family: Courier New;
 		font-size: 8pt;
 		font-weight: bold;
