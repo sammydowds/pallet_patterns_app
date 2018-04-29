@@ -8,11 +8,14 @@ function tire_hover(e) {
 
     var tire_position = document.getElementById("tire");
     var coordin_text = document.getElementById('coord_text');
+    var loc_left = document.getElementById("Pallet").offsetLeft;
+    var loc_top = document.getElementById("Pallet").offsetTop; 
+
 
     //Updating coordinate text
     console.log(document.getElementById("Pallet").offsetLeft);
-    var x_ = (e.pageX - document.getElementById("Pallet").offsetLeft)+172+radius;
-    var y_ = (e.pageY - document.getElementById("Pallet").offsetTop)+172+radius;
+    var x_ = (e.pageX - loc_left)+172+radius;
+    var y_ = (e.pageY - loc_top)+172+radius;
     coordin_text.innerHTML = "coordinates: " + (x_) + "," + (y_); 
     
     //updating tire location on the screen (hovering)
