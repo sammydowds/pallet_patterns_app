@@ -1,74 +1,62 @@
 
 
-var el = document.getElementById('blocktext')
-if(el) {
-    el.addEventListener('click', test);
-}
+function tire_hover(e) {
+    var x = e.clientX;
+    var y = e.clientY;
+    var radius = 45; 
+    var padding_tire = 10;
 
-function test() {
-    console.log('HELLLELLELLELELE');
-}
+    var tire_position = document.getElementById("tire");
+    var coordin_text = document.getElementById('coord_text');
 
-function mouseFollowers(e) {
-    //x direction max = 0 - 337
-    var x = e.clientX -(548);
-    //Y direction max = 0 - 337
-    var y = e.clientY - (241);
-    var coord = document.getElementById("coord_tag");
-    var coor = "(" + x + "," + y + ")";
-    document.getElementById("coord_tag").innerHTML = coor;
+    //Updating coordinate text
+    console.log(document.getElementById("Pallet").offsetLeft);
+    var x_ = (e.pageX - document.getElementById("Pallet").offsetLeft)+172+radius;
+    var y_ = (e.pageY - document.getElementById("Pallet").offsetTop)+172+radius;
+    coordin_text.innerHTML = "coordinates: " + (x_) + "," + (y_); 
     
+    //updating tire location on the screen (hovering)
     
+    tire_position.style.transform = "translate3d(" + (x)+ "px,"+ (y)+ "px,0px)"; 
     
-
-}
-
-function offset_tire_x(event) {
-
-    var x = e.clientX - 40;
-    return x
-
-}
-
-function offset_tire_y(e) {
-    var y = e.clientY - 40;
-    return y
-
-}
-
-function tire_hovering(event) {
-    document.getElementById("tire").style.display = 'block';
-    var tire_hov = document.getElementById("tire");
-
-    tire_hov.style.transform = "translate3d(" + offset_tire_x(e) + "px,"+ offset_tire_y(e) + "px, 0px)";
+    console.log('Here is the mouse position: ' + x + ',' + y); 
+    
 
     
 }
 
 
+function put_tire(e) {
+    console.log('BUTTON CLICKED');
+    var x = e.clientX;
+    var y = e.clientY;
 
-// function lineFollowers(e) {
-// 	document.getElementById("horiz_follow").style.display = 'block';
-// 	document.getElementById("vertical_follow").style.display = 'block';
-// 	var x_ = e.clientX;
-// 	var y_ = e.clientY;
-// 	var x_off = x_ - 12;
-//     var y_off = y_ - 20;
-//     var h_line = document.getElementById("horiz_follow");
-//     var v_line = document.getElementById("vertical_follow");
-//     h_line.style.transform = "translate3d(" + (x_off) + "px, 0px, 0px)";
-//     v_line.style.transform = "translate3d("+"0px," + (y_off) + "px, 0px)";
+    var new_tire = document.getElementById("tire").cloneNode(true);
+    new_tire.style.transform = "translate3d(" + (x)+ "px,"+ (y)+ "px,0px)"; 
+    document.getElementById("tires_placed").appendChild(new_tire);
 
 
 
-// }
-
-
-
-function clearCoor() {
-    document.getElementById("coord_tag").innerHTML = "";
-    // document.getElementById("vertical_follow").style.display = 'none';
-    // // document.getElementById("horiz_follow").style.display = 'none';
-    document.getElementById("tire").style.display = 'none';
-    
 }
+
+
+function pallet_pix_inches(e) {
+    var width = document.getElementById("Width_Pallet").value; 
+    var length = document.getElementById("Length_Pallet").value; 
+    var x_scale = (1/width)*344; 
+    var y_scale = (1/length)*344; 
+
+    var tire_x = document.getElementById("OD").value * x_scale; 
+    var tire_y = document.getElementById("OD").value * y_scale; 
+    var side_wall = tire_x * 0.20; 
+
+    document.getElementById("tire").style.width = tire_x - (side_wall*2) + "px"; 
+    document.getElementById("tire").style.height = tire_y - (side_wall*2) + "px";  
+    document.getElementById("tire").style.border = side_wall + "px solid black";
+    var radius = 0.5*tire_x + side_wall + 10;
+    
+
+}
+
+
+

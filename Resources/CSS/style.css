@@ -9,13 +9,17 @@
 		left: 0;
 		border-bottom-left-radius: 10px;
 		border-bottom-right-radius: 10px;
-		
-
 
 	}
 
-	#Pallet {
+
+
+	#tire_placed {
 		
+	}
+
+	#Pallet {
+		/*cursor: none;*/
 		height: 338px;
 		width: 338px;
 		background: #998820;
@@ -24,11 +28,21 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		cursor: "none";
+		
 
 
 
 
+	}
+
+	#mouse_gone {
+		position: fixed;
+		cursor: none;
+		height: 387px;
+		width: 387px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 
 	#horiz {
@@ -57,7 +71,7 @@
 		
 		text-align: center;
 		
-		font-family: arial;
+		font-family: Courier New;
 		font-size: 13pt;
 		font-weight: bold;
 	}
@@ -66,7 +80,7 @@
 		
 		text-align: center;
 
-		font-family: arial;
+		font-family: Courier New;
 		font-size: 13pt;
 		font-weight: bold;
 
@@ -75,14 +89,31 @@
 
 
 	#tire {
+		
+		cursor: move;
 		position: absolute;
 		width: 60px;
 		height: 60px;
 		border-radius: 500px;
 		-webkit-border-radius: 500px;
-		border: 15px solid black;
-		transform: translate3d(50px, 50px, 0px);
+		border: 30px solid black;
+		transform: translate3d(0px, 0px, 0px);
+		
+		
+		transition: width 2s, height 4s; 
 	
+	}
+
+	.tire_text {
+		position: absolute;
+		margin: auto;
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%, -50%, 0);
+		padding: 0;
+
+
+		
 	}
 
 
@@ -112,18 +143,57 @@
 
 	#coord_tag {
 		position: absolute;
-		font-family: arial;
+		font-family: Courier New;
 		font-size: 13pt;
 		font-weight: bold;
 		transform: translate3d(400px, 500px, 0px);
 		
 		width: 20px;
 		height: 20px;
+	}
 
-		
+	#coordinates {
+		position: absolute;
+		height: 20px;
+		width: 100%;
+		bottom: 20%;
+	}
+	
+	#input_form {
+		position: absolute;
+		width: 30%;
+		font-family: Courier New;
+		font-size: 8pt;
+		font-weight: bold;
+		bottom: 60%;
+		text-align: center;
 
 
 	}
+	button {
+		width: 100px;
+		height: 25px;
+		font-family: Courier New;
+		font-size: 8pt;
+		background-color: #ffff1a;
+
+
+	}
+
+
+	
+
+
+	
+	#coord_text {
+		text-align: center;
+		font-family: Courier New;
+		font-size: 20pt;
+		/*font-weight: bold;*/
+	}
+
+
+	
 
 	#horiz_follow {
 		position: absolute;
@@ -144,14 +214,16 @@
 	
 	
 	#blocktext {
-		
-		
+		top: 300px;
 		text-align: center;
-		font-family: sans-serif;
+		font-family: Courier New;
 		font-size: 45px;
-		
-
-
-
-
 	}
+		
+	
+
+
+
+	
+
+	

@@ -5,8 +5,11 @@
 	<head>
 		<meta charset = "utf-8">
 		<title> Pallet Pattern Creator </title>
+
 		<script src="resources/javascript/main.js"></script>
+		<script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 		<link rel = "stylesheet"  type = "text/css" href = "resources/css/style.css">
+		
 	</head>
 
 	<body>
@@ -35,14 +38,55 @@
 		<hr id = "VL">	
 
 <!-- function within for following mouse around on pallet -->	
-
-		<div id = "Pallet">
+		<div onclick = "put_tire(event)" onmousemove = "tire_hover(event)" id = "mouse_gone" ></div>
+		<div onclick = "put_tire(event)" onmousemove = "tire_hover(event)" id = "Pallet">
 		</div>
-		<hr id = "horiz_follow">
-		<hr id = "vertical_follow">
-		<p id="coord_tag"></p>
-		<div id = "tire"> </div>
+		<div id = "coordinates">
+			<p id = "coord_text" > </p>
 
+
+		
+		</div>
+
+		
+		<!-- <hr id = "horiz_follow">
+		<hr id = "vertical_follow"> -->
+
+	<!-- list of stacks and their x and y location -->
+
+
+	<!-- input for OD -->
+	<div id = "input_form">
+		<form>
+			<p>Input the OD (in): <br>
+			<input type = "number" id = "OD" id = "OD"><br></p>
+
+			<p>Input the Length of the Pallet (in): <br>
+			<input type = "number" id = "Length_Pallet"><br></p>
+
+			<p>Input the Width of the Pallet (in): <br>
+			<input type = "number" id = "Width_Pallet"><br></p>
+
+			<button onclick = "pallet_pix_inches(event)" type = "button">Input Data</button>
+
+
+
+		</form>
+
+	</div>
+
+	
+
+
+		<!-- tire placement -->
+		<p id="coord_tag"></p>
+		<div id = "tire"> 
+			<p class = "tire_text" > + </p>
+
+
+		</div>
+			<div id = "tires_placed" ></div>
+			
 
 			
 
