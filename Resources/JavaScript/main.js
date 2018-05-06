@@ -66,7 +66,7 @@ function pallet_pix_inches(e) {
     document.getElementById("tire").style.width = tire_pix_od - (sidewall*2) + "px"; 
     document.getElementById("tire").style.height = tire_pix_od - (sidewall*2) + "px";  
     console.log(tire_pix_od)
-    radius = 0.5*tire_pix_od + 10;
+    radius = Math.round(0.5*tire_pix_od + 10);
     console.log(radius);
     
 
