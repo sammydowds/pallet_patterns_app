@@ -19,9 +19,9 @@
 	}
 
 	#Pallet {
-		cursor: none;
-		height: 338px;
-		width: 338px;
+		/*cursor: none;*/
+		height: 337px;
+		width: 337px;
 		background: #998820;
 		border: 3px solid black;
 		position: absolute;
@@ -37,7 +37,7 @@
 
 	#mouse_gone {
 		position: fixed;
-		cursor: none;
+		/*cursor: none;*/
 		height: 800px;
 		width: 800px;
 		top: 50%;
@@ -90,7 +90,7 @@
 
 	#tire {
 		
-		cursor: none;
+		/*cursor: none;*/
 		position: absolute;
 		width: 60px;
 		height: 60px;
