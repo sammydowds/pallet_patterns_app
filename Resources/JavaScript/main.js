@@ -3,6 +3,9 @@ var radius = 70;
 var sidewall = 30;
 console.log(radius)
 
+var pallet_l_in = 80;
+var pallet_h_in = 80; 
+
 function tire_hover(e) {
     console.log(radius);
     var x = e.pageX;
@@ -20,8 +23,8 @@ function tire_hover(e) {
 
     //Updating coordinate text
     
-    var x_ = (e.pageX - loc_left + 170 + radius);
-    var y_ = (e.pageY - loc_top + 170 + radius);
+    var x_ = Math.round((e.pageX - loc_left + 170 + radius)/(340/pallet_l_in));
+    var y_ = Math.round((e.pageY - loc_top + 170 + radius)/(340/pallet_h_in));
     
     coordin_text.innerHTML = "coordinates: " + (x_) + "," + (y_); 
     
@@ -51,8 +54,8 @@ function put_tire(e) {
 
 
 function pallet_pix_inches(e) {
-    var width = document.getElementById("Width_Pallet").value; 
-    var length = document.getElementById("Length_Pallet").value; 
+    pallet_l_in = document.getElementById("Width_Pallet").value; 
+    pallet_h_in = document.getElementById("Length_Pallet").value; 
     var x_scale = (1/width)*340; 
    
 
